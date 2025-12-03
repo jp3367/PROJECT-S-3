@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema Solar - Explora los planetas y el universo con Project S">
+  <title>Sistema Solar - Project S</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-container">
+      <h1>
+        <img src="img/project-s-logo.png" alt="Project S - Sistema Solar" class="header-logo" width="300" height="120">
+      </h1>
+      <nav class="main-nav">
+        <ul class="nav-menu">
+          <li><a href="#planets">Planetas</a></li>
+          <li><a href="#neptune">Neptuno</a></li>
+          <li><a href="#missions">Misiones</a></li>
+          <li><a href="parallax.html">Parallax</a></li>
+          <li><a href="gallery.html">Galería</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="planets" class="solar-system">
+      <h2 class="section-main-title">Los Planetas del Sistema Solar</h2>
+      
+      <div class="planets-grid">
+        <div class="planet">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg" alt="Planeta Mercurio" width="200" height="200">
+          <h3>Mercurio</h3>
+          <p class="info">Mercurio es el planeta localizado más cerca al Sol.</p>
+        </div>
+
+        <div class="planet">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" alt="Planeta Venus" width="200" height="200">
+          <h3>Venus</h3>
+          <p class="info">Venus tiene una atmósfera densa y bastante calurosa.</p>
+        </div>
+
+        <div class="planet">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" alt="Planeta Tierra" width="200" height="200">
+          <h3>Tierra</h3>
+          <p class="info">La Tierra, hogar, el único planeta conocido con vida.</p>
+        </div>
+
+        <div class="planet">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" alt="Planeta Marte" width="200" height="200">
+          <h3>Marte</h3>
+          <p class="info">Marte, el planeta rojo, podría albergar vida en el futuro.</p>
+        </div>
+
+        <div class="planet">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg" alt="Planeta Júpiter" width="200" height="200">
+          <h3>Júpiter</h3>
+          <p class="info">Júpiter es el planeta más grande del sistema solar.</p>
+        </div>
+
+        <div class="planet">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Saturn_Storm.jpg" alt="Planeta Saturno" width="200" height="200">
+          <h3>Saturno</h3>
+          <p class="info">Saturno destaca por sus impresionantes anillos.</p>
+        </div>
+
+        <div class="planet">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg" alt="Planeta Urano" width="200" height="200">
+          <h3>Urano</h3>
+          <p class="info">Urano gira de lado, como rodando sobre su órbita.</p>
+        </div>
+
+        <div class="planet">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg" alt="Planeta Neptuno" width="200" height="200">
+          <h3>Neptuno</h3>
+          <p class="info">Neptuno es el planeta localizado más lejos del Sol.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="neptune" class="neptune-section">
+      <div class="neptune-container">
+        <div class="neptune-image-wrapper">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg" alt="Neptuno en detalle" class="neptune-large-image" width="600" height="600">
+        </div>
+        <div class="neptune-content">
+          <h2 class="neptune-title">Neptuno: El Gigante Azul</h2>
+          <div class="neptune-info-grid">
+            <div class="neptune-info-card">
+              <h3>Características</h3>
+              <ul>
+                <li><strong>Distancia del Sol:</strong> 4.500 millones de km</li>
+                <li><strong>Diámetro:</strong> 49.244 km</li>
+                <li><strong>Temperatura:</strong> -214°C</li>
+                <li><strong>Duración del día:</strong> 16 horas</li>
+              </ul>
+            </div>
+            <div class="neptune-info-card">
+              <h3>Datos Curiosos</h3>
+              <ul>
+                <li>Tiene los vientos más fuertes del sistema solar</li>
+                <li>Posee 14 lunas conocidas</li>
+                <li>Su color azul se debe al metano en su atmósfera</li>
+                <li>Fue descubierto mediante cálculos matemáticos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="missions" class="missions-section">
+      <h2 class="section-main-title">Gestión de Misiones Espaciales</h2>
+      
+      <div class="missions-container">
+        <div class="mission-form-wrapper">
+          <h3>Añadir Nueva Misión</h3>
+          <form id="mission-form" class="mission-form" onsubmit="return false;">
+            <div class="form-group">
+              <label for="mission-name">Nombre de la Misión:</label>
+              <input type="text" id="mission-name" name="missionName">
+              <span class="error-message" id="name-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="mission-destination">Destino:</label>
+              <input type="text" id="mission-destination" name="missionDestination">
+              <span class="error-message" id="destination-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="mission-year">Año de Lanzamiento:</label>
+              <input type="number" id="mission-year" name="missionYear" min="1957" max="2100">
+              <span class="error-message" id="year-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="mission-status">Estado:</label>
+              <select id="mission-status" name="missionStatus">
+                <option value="">Selecciona un estado</option>
+                <option value="active">Activa</option>
+                <option value="completed">Completada</option>
+                <option value="planned">Planificada</option>
+              </select>
+              <span class="error-message" id="status-error"></span>
+            </div>
+            
+            <button type="submit" class="btn-primary">Añadir Misión</button>
+          </form>
+        </div>
+        
+        <div class="missions-list-wrapper">
+          <h3>Lista de Misiones</h3>
+          <div id="missions-list" class="missions-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-container">
+        <img src="img/shadow.webp" alt="Decoración espacial" class="decoration-image" width="250" height="250">
+        
+        <div class="about-content">
+          <h2 class="section-title">¿Qué es PROJECT S?</h2>
+          <p class="section-text">PROJECT S es una página web dedicada sobre nuestro sistema solar. Podrás encontrar información sobre cada planeta, como su tamaño, temperatura, y se añadirán algunos detalles curiosos de cada planeta del sistema.</p>
+          <p class="section-text">Este proyecto se irá actualizando mediante pase el tiempo, ya sea con actualizaciones de diseño de la página, cambios de logo, nuevos detalles de cada planeta e incluso se añadirán nuevas secciones a lo largo del tiempo.</p>
+          <p class="section-text">Esta versión es una beta, al ser el primer modelo de la página es probable encontrar errores, bugs, etc.</p>
+        </div>
+
+        <div class="neptune-info-section">
+          <h2 class="section-title">Neptuno: El Gigante Azul Helado</h2>
+          
+          <div class="neptune-details">
+            <div class="neptune-detail-card">
+              <h3>Características Físicas</h3>
+              <ul>
+                <li><strong>Diámetro:</strong> 49.244 km (aproximadamente 4 veces el de la Tierra)</li>
+                <li><strong>Masa:</strong> 17 veces la masa de la Tierra</li>
+                <li><strong>Gravedad:</strong> 1,14 veces la de la Tierra</li>
+                <li><strong>Composición:</strong> Hidrógeno, helio y metano</li>
+              </ul>
+            </div>
+
+            <div class="neptune-detail-card">
+              <h3>Órbita y Rotación</h3>
+              <ul>
+                <li><strong>Distancia del Sol:</strong> 4.500 millones de km</li>
+                <li><strong>Periodo orbital:</strong> 165 años terrestres</li>
+                <li><strong>Duración del día:</strong> 16 horas terrestres</li>
+                <li><strong>Velocidad orbital:</strong> 5,43 km/s</li>
+              </ul>
+            </div>
+
+            <div class="neptune-detail-card">
+              <h3>Clima y Atmósfera</h3>
+              <ul>
+                <li><strong>Temperatura:</strong> -214°C en promedio</li>
+                <li><strong>Vientos:</strong> Hasta 2.100 km/h (los más rápidos del sistema solar)</li>
+                <li><strong>Atmósfera:</strong> Nubes de metano congelado</li>
+                <li><strong>Color:</strong> Azul intenso debido al metano</li>
+              </ul>
+            </div>
+
+            <div class="neptune-detail-card">
+              <h3>Lunas y Anillos</h3>
+              <ul>
+                <li><strong>Lunas:</strong> 14 lunas conocidas</li>
+                <li><strong>Luna principal:</strong> Tritón (la más grande)</li>
+                <li><strong>Anillos:</strong> 5 anillos principales</li>
+                <li><strong>Tritón:</strong> Única luna grande con órbita retrógrada</li>
+              </ul>
+            </div>
+
+            <div class="neptune-detail-card">
+              <h3>Descubrimiento</h3>
+              <ul>
+                <li><strong>Fecha:</strong> 23 de septiembre de 1846</li>
+                <li><strong>Descubridores:</strong> Urbain Le Verrier, Johann Galle</li>
+                <li><strong>Método:</strong> Predicción matemática</li>
+                <li><strong>Primer planeta:</strong> Descubierto mediante cálculos en vez de observación directa</li>
+              </ul>
+            </div>
+
+            <div class="neptune-detail-card">
+              <h3>Datos Curiosos</h3>
+              <ul>
+                <li>Es el planeta más denso de los gigantes gaseosos</li>
+                <li>Tiene un núcleo rocoso del tamaño de la Tierra</li>
+                <li>La Gran Mancha Oscura es una tormenta del tamaño de la Tierra</li>
+                <li>Solo ha sido visitado una vez por la Voyager 2 en 1989</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>PROJECT S</h3>
+        <p>Explorando el universo desde 2025</p>
+      </div>
+      <div class="footer-section">
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="#planets">Planetas</a></li>
+          <li><a href="#missions">Misiones</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <p>juanpablomv17@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Todos los derechos reservados.</p>
+      <p>Referencia de diseño: <a href="https://dribbble.com/shots/26162226-Long-grid-solar-system" target="_blank" rel="noopener noreferrer">Dribbble - Solar System</a></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

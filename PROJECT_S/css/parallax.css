@@ -1,0 +1,485 @@
+/* ===== PARALLAX PAGE STYLES - OPTIMIZADO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+.parallax-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(148, 222, 246, 0.3);
+}
+
+.parallax-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.parallax-nav {
+  padding: 20px 5%;
+}
+
+.back-link {
+  color: rgb(148, 222, 246);
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.back-link:hover {
+  color: rgb(100, 200, 255);
+  text-shadow: 0 0 10px rgba(148, 222, 246, 0.5);
+  transform: translateX(-5px);
+}
+
+/* ===== PARALLAX MAIN ===== */
+.parallax-main {
+  position: relative;
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform-style: preserve-3d;
+}
+
+.parallax-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.parallax-layer-back {
+  transform: translateZ(-2px) scale(3);
+  z-index: 1;
+}
+
+.parallax-layer-mid {
+  transform: translateZ(-1px) scale(2);
+  z-index: 2;
+}
+
+.parallax-layer-base {
+  transform: translateZ(0);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+/* ===== STARS EFFECT ===== */
+.stars {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.stars::before,
+.stars::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  box-shadow:
+    100px 200px #fff, 300px 100px #fff, 500px 300px #fff,
+    700px 150px #fff, 900px 400px #fff, 150px 450px #fff,
+    350px 250px #fff, 550px 100px #fff, 750px 350px #fff,
+    950px 200px #fff, 200px 50px #fff, 400px 500px #fff,
+    600px 200px #fff, 800px 450px #fff, 1000px 100px #fff,
+    1100px 250px #fff, 1200px 350px #fff, 1300px 150px #fff,
+    1400px 450px #fff, 1500px 250px #fff;
+  animation: twinkle 3s infinite;
+}
+
+.stars::after {
+  width: 1px;
+  height: 1px;
+  box-shadow:
+    250px 150px #fff, 450px 350px #fff, 650px 50px #fff,
+    850px 250px #fff, 1050px 400px #fff, 125px 300px #fff,
+    325px 450px #fff, 525px 150px #fff, 725px 400px #fff,
+    925px 50px #fff, 1125px 300px #fff, 1225px 100px #fff,
+    1325px 400px #fff, 1425px 200px #fff, 1525px 350px #fff;
+  animation: twinkle 4s infinite;
+}
+
+.stars-dense::before {
+  box-shadow:
+    50px 100px #fff, 100px 200px #fff, 150px 300px #fff, 200px 400px #fff,
+    250px 50px #fff, 300px 150px #fff, 350px 250px #fff, 400px 350px #fff,
+    450px 100px #fff, 500px 200px #fff, 550px 300px #fff, 600px 400px #fff,
+    650px 50px #fff, 700px 150px #fff, 750px 250px #fff, 800px 350px #fff,
+    850px 100px #fff, 900px 200px #fff, 950px 300px #fff, 1000px 400px #fff,
+    1050px 150px #fff, 1100px 250px #fff, 1150px 350px #fff, 1200px 100px #fff,
+    1250px 200px #fff, 1300px 300px #fff, 1350px 400px #fff, 1400px 150px #fff;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ===== CONTENT WRAPPER ===== */
+.content-wrapper {
+  text-align: center;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(148, 222, 246, 0.3);
+  max-width: 800px;
+  animation: fadeInUp 1s ease;
+  will-change: opacity, transform;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.parallax-title {
+  font-size: clamp(2em, 5vw, 4em);
+  color: rgb(148, 222, 246);
+  margin-bottom: 20px;
+  text-shadow: 0 0 30px rgba(148, 222, 246, 0.8);
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(148, 222, 246, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(148, 222, 246, 1);
+  }
+}
+
+.parallax-subtitle {
+  font-size: clamp(1.8em, 4vw, 3em);
+  color: rgb(148, 222, 246);
+  margin-bottom: 15px;
+  text-shadow: 0 0 20px rgba(148, 222, 246, 0.6);
+}
+
+.parallax-text,
+.parallax-description {
+  font-size: clamp(1em, 2vw, 1.3em);
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* ===== PLANETS IN PARALLAX ===== */
+.parallax-planet {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 60px rgba(148, 222, 246, 0.5);
+  animation: floatPlanet 6s ease-in-out infinite;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+.parallax-mars {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+.parallax-earth {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+}
+
+.parallax-jupiter {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+}
+
+.parallax-saturn {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  width: 350px;
+  height: 350px;
+}
+
+@keyframes floatPlanet {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(10deg);
+  }
+}
+
+/* ===== NEBULA EFFECT ===== */
+.nebula-effect {
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 30% 50%,
+      rgba(138, 43, 226, 0.4) 0%,
+      rgba(75, 0, 130, 0.3) 25%,
+      rgba(0, 0, 139, 0.2) 50%,
+      transparent 70%),
+    radial-gradient(circle at 70% 60%,
+      rgba(255, 20, 147, 0.3) 0%,
+      rgba(138, 43, 226, 0.2) 30%,
+      transparent 60%);
+  animation: nebulaPulse 8s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+@keyframes nebulaPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* ===== FLOATING ROCKS ===== */
+.floating-rocks {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.rock {
+  position: absolute;
+  background: #555;
+  border-radius: 50%;
+  box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.5);
+  will-change: transform;
+}
+
+.rock-1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 20%;
+  animation: rockFloat1 8s ease-in-out infinite;
+}
+
+.rock-2 {
+  width: 120px;
+  height: 120px;
+  top: 60%;
+  right: 25%;
+  animation: rockFloat2 10s ease-in-out infinite;
+}
+
+.rock-3 {
+  width: 60px;
+  height: 60px;
+  top: 40%;
+  left: 70%;
+  animation: rockFloat3 7s ease-in-out infinite;
+}
+
+@keyframes rockFloat1 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50px, -30px) rotate(180deg);
+  }
+}
+
+@keyframes rockFloat2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(40px, 40px) rotate(-180deg);
+  }
+}
+
+@keyframes rockFloat3 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-30px, 50px) rotate(90deg);
+  }
+}
+
+/* ===== FINAL SECTION ===== */
+.final-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.btn-return {
+  display: inline-block;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, rgb(148, 222, 246), rgb(100, 200, 255));
+  color: #000;
+  font-size: 1.2em;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(148, 222, 246, 0.4);
+}
+
+.btn-return:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(148, 222, 246, 0.6);
+}
+
+/* ===== SCROLL PROGRESS BAR ===== */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, rgb(148, 222, 246), rgb(100, 200, 255));
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* ===== FADE IN SECTIONS ===== */
+.parallax-section {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.section-visible {
+  opacity: 1 !important;
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.parallax-layer-back,
+.parallax-layer-mid {
+  will-change: transform;
+}
+
+/* ===== MEDIA QUERIES - MOBILE ===== */
+@media (max-width: 600px) {
+  .parallax-main {
+    perspective: 1px;
+  }
+
+  .content-wrapper {
+    padding: 20px;
+    margin: 0 10px;
+  }
+
+  .parallax-planet {
+    width: 150px;
+    height: 150px;
+  }
+
+  .parallax-jupiter,
+  .parallax-saturn {
+    width: 180px;
+    height: 180px;
+  }
+
+  .rock-1 {
+    width: 40px;
+    height: 40px;
+  }
+
+  .rock-2 {
+    width: 60px;
+    height: 60px;
+  }
+
+  .rock-3 {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Reduce animations on mobile for performance */
+  .parallax-planet {
+    animation: floatPlanet 8s ease-in-out infinite;
+  }
+}
+
+/* ===== MEDIA QUERIES - TABLET ===== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .content-wrapper {
+    padding: 30px;
+  }
+
+  .parallax-planet {
+    width: 220px;
+    height: 220px;
+  }
+
+  .parallax-jupiter,
+  .parallax-saturn {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .parallax-layer-back,
+  .parallax-layer-mid {
+    transform: none !important;
+  }
+}
